@@ -25,5 +25,12 @@
 		  });
 		},
 	});
+	//Autotaging based on subject
+        $('#issue_subject').change(function(){
+        	$('#issue_tag_list').tagit('removeAll');
+        	$('#issue_subject').val().split('_').map(function(word) {
+                	$('#issue_tag_list').tagit('createTag', word);
+        	})
+	});
 " %>
 </div>
